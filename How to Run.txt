@@ -1,0 +1,105 @@
+# How to Run the Student Management System in VS Code
+
+This guide will help you run your Spring Boot Student Management System project using Visual Studio Code.
+
+---
+
+## Prerequisites
+
+- **Java 17** or higher installed on your computer
+- **MySQL** installed and running
+- **VS Code** installed
+- **Java Extension Pack** and **Maven for Java** extensions installed in VS Code
+
+---
+
+## Steps
+
+### 1. Open the Project in VS Code
+
+- Start VS Code.
+- Click **File > Open Folder...** and select your project folder.
+
+---
+
+### 2. Set Up the Database
+
+- Open MySQL (Workbench, CLI, or any tool you use).
+- Create a database for your project, for example:
+  ```sql
+  CREATE DATABASE studentdb;
+  ```
+- (Optional) Create a user and grant access if you don't want to use `root`.
+
+---
+
+### 3. Configure Database Connection
+
+- Open `src/main/resources/application.properties`.
+- Set your database details:
+  ```
+  spring.datasource.url=jdbc:mysql://localhost:3306/studentdb
+  spring.datasource.username=your_mysql_user
+  spring.datasource.password=your_mysql_password
+  ```
+  Replace `your_mysql_user` and `your_mysql_password` with your actual MySQL username and password.
+
+---
+
+### 4. Build the Project
+
+- Open the **Terminal** in VS Code (**View > Terminal**).
+- Run:
+  ```
+  mvn clean install
+  ```
+
+---
+
+### 5. Run the Application
+
+- Open `src/main/java/com/example/studentmanagement/StudentManagementApplication.java`.
+- At the top of the `main` method, you will see a **Run** (▶️) button.
+- Click the **Run** button.
+- The application will start, and you will see logs in the terminal.
+
+---
+
+### 6. Swagger command:
+
+http://localhost:8080/swagger-ui.html
+
+---
+
+### 7. Basic commands to run in curl
+
+Curl Commands to run it in Command Prompt:
+
+- Get all students:~~  curl http://localhost:8080/students  ~~
+
+- Add a new student:~~~   curl -X POST http://localhost:8080/students ^
+                        -H "Content-Type: application/json" ^
+                        -d "{\"name\":\"{anme}\",\"age\":{age},\"grade\":\"{grade}}\",\"address\":\"{address}\"}"    ~~~
+
+- Get a student by ID:~~~   curl http://localhost:8080/students/{id no.}
+
+- Update a student:~~~    curl -X PUT http://localhost:8080/students/{id no.} \
+                        -H "Content-Type: application/json" \
+                        -d "{\"name\":\"Jane Doe\",\"age\":22,\"grade\":\"B\",\"address\":\"456 Elm St\"}"      ~~~
+
+- Delete a student:~~~    curl -X DELETE http://localhost:8080/students/{id no.}
+
+---
+
+### 8. Stopping the Application
+
+- To stop the app, click the **Stop** (■) button in the terminal or press `Ctrl + C` in the terminal.
+
+---
+
+## That's it!
+
+You are now running your Spring Boot project in VS Code.
+If you have any errors, check your database connection and make sure
+
+

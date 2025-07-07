@@ -1,0 +1,34 @@
+student-management/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/studentmanagement/
+│   │   │   ├── config/
+│   │   │   │   └── SwaggerConfig.java
+│   │   │   ├── controller/
+│   │   │   │   └── StudentController.java
+│   │   │   ├── dto/
+│   │   │   │   ├── StudentRequest.java
+│   │   │   │   └── StudentResponse.java
+│   │   │   ├── exception/
+│   │   │   │   ├── GlobalExceptionHandler.java
+│   │   │   │   └── ResourceNotFoundException.java
+│   │   │   ├── model/
+│   │   │   │   └── Student.java
+│   │   │   ├── repository/
+│   │   │   │   └── StudentRepository.java
+│   │   │   ├── service/
+│   │   │   │   ├── StudentService.java
+│   │   │   │   └── impl/
+│   │   │   │       └── StudentServiceImpl.java
+│   │   │   └── StudentManagementApplication.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/java/com/example/studentmanagement/
+│       ├── controller/
+│       │   └── StudentControllerTest.java
+│       ├── integration/
+│       │   └── StudentIntegrationTest.java
+│       └── service/
+│           └── StudentServiceTest.java
+├── pom.xml
+└── README.md
